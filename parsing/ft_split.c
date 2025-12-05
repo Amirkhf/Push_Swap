@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 12:04:54 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/04 12:07:34 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 13:55:12 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void	free_function(char **str)
 {
 	int	i;
 
-	i = -1;
+	i = 0;
 	while (str[i])
 	{
 		free(str[i]);
