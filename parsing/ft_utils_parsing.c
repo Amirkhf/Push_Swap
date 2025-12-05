@@ -6,17 +6,28 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 12:36:11 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/04 14:12:40 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 17:33:10 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_Swap.h"
 
-long long	ft_atoi(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
-	int	sign;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+long long	ft_atoi(char *str)
+{
+	int			i;
+	int			sign;
 	long long	result;
+
 
 	i = 0;
 	sign = 1;
@@ -36,5 +47,3 @@ long long	ft_atoi(char *str)
 	}
 	return (result * sign);
 }
-
-

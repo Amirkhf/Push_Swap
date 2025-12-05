@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 11:39:20 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 13:55:47 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 17:37:04 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_check_arguments(char **argv)
 	{
 		str = ft_split(argv[i], ' ');
 		if (str == NULL)
-			return (printf("string nul"), 1);
-		if (ft_sign_check(str)) // verifie si on a pas trop de sign "--142"
-			return (printf("sign mal"), 1);
+			return (free_function(str), 1);
+		if (ft_sign_check(str))
+			return (free_function(str), 1);
 		if (ft_check_limits(str))
-			return (printf("trop grand"), 1);
+			return (free_function(str), 1);
 		free_function(str);
 		i++;
 	}
@@ -44,6 +44,8 @@ int	ft_check_limits(char **str)
 	j = 0;
 	while (str[i])
 	{
+		if (ft_strlen(str[i]) > 11)
+			return (write(1, "Error\n", 6), exit(1), 1);
 		nb = ft_atoi(str[i]);
 		if (nb < INT_MIN)
 			return (1);
@@ -67,6 +69,8 @@ int	ft_sign_check(char **str)
 		count = 0;
 		while (str[i][j])
 		{
+			if (str[i][j] == '-' && str[i][j + 1] == '\0')
+				return (1);
 			if (str[i][j] == '-')
 				count++;
 			if (count > 1 || str[i][j] == '+')

@@ -7,7 +7,7 @@
 
 //--
 # define INT_MIN -2147483648
-# define INT_MAX 2147483648
+# define INT_MAX 2147483647
 
 //-----------------PARSING-------------//
 int			ft_check_arguments(char **argv);
@@ -19,9 +19,11 @@ int			ft_verif_sign_seul(char **str);
 //-----------------PARSING-------------//
 
 //-----------new_tab------------------//
+int			ft_verif_doublon(int *tab, char **str);
 int			*ft_new_tab(int argc, char **argv, int *tab);
 int			*ft_remplissage(int *tab, char **str);
-int	ft_len_tab(char **argv ,int argc);
+int			ft_len_tab(char **argv, int argc);
+int			ft_strlen(char *str);
 //-----------new_tab------------------//
 
 //-----------FREE--------------------//
@@ -29,7 +31,7 @@ void		free_function(char **str);
 //-----------FREE--------------------//
 
 //------------------test--------------//
-void		affiche(int *tab);
+
 //------------------test--------------//
 
 #endif

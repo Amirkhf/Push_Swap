@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:04:42 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 16:43:55 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 18:52:30 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ int	ft_len_tab(char **argv, int argc)
 		while (str[j] != NULL)
 		{
 			len++;
-			j++;	return (len);
-
+			j++;
+			return (len);
 		}
 		free_function(str);
 		i++;
@@ -54,12 +54,39 @@ int	*ft_new_tab(int argc, char **argv, int *tab)
 		if (str == NULL)
 			return (NULL);
 		tab = ft_remplissage(tab, str);
+		ft_verif_doublon(tab, str);
 		free_function(str);
 		i++;
 	}
 	return (tab);
 }
+int	ft_verif_doublon(int *tab, char **str)
+{
+	int	i;
+	int	value;
+	int	j;
+	int	verif;
 
+	verif = 0;
+	i = 0;
+	while (tab[i])
+	{
+		j = 0;
+		j = 0;
+		vavalue = tab[i];
+		while (tab[j])
+		{
+			if (value == tab[j] && j != i)
+				verif = 1;
+			j++;
+		}
+		i++;
+	}
+	if (verif == 1)
+		return (free(tab), free_function(str), write(1, "Error\n", 6), exit(1),
+			0);
+	return (0);
+}
 int	*ft_remplissage(int *tab, char **str)
 {
 	int i;
