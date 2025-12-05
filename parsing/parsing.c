@@ -6,11 +6,38 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 11:39:20 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 19:10:25 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 19:19:37 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_Swap.h"
+
+int	ft_verif_doublon(long long *tab, char **str)
+{
+	int	i;
+	int	value;
+	int	j;
+	int	verif;
+
+	verif = 0;
+	i = 0;
+	while (tab[i])
+	{
+		j = 0;
+		value = tab[i];
+		while (tab[j])
+		{
+			if (value == tab[j] && j != i)
+				verif = 1;
+			j++;
+		}
+		i++;
+	}
+	if (verif == 1)
+		return (free(tab), free_function(str), write(1, "Error\n", 6), exit(1),
+			0);
+	return (0);
+}
 
 int	ft_check_arguments(char **argv)
 {
@@ -23,11 +50,11 @@ int	ft_check_arguments(char **argv)
 	{
 		str = ft_split(argv[i], ' ');
 		if (str == NULL)
-			return (printf("error split\n"), free_function(str), 1);
+			return (free_function(str), 1);
 		if (ft_sign_check(str))
-			return (printf("error sign\n"), free_function(str), 1);
+			return (free_function(str), 1);
 		if (ft_check_limits(str))
-			return (printf("error limit\n"), free_function(str), 1);
+			return (free_function(str), 1);
 		free_function(str);
 		i++;
 	}

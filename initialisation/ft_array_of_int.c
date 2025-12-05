@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:04:42 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 19:12:29 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 19:19:01 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,32 +59,7 @@ long long	*ft_new_tab(int argc, char **argv, long long *tab)
 	}
 	return (tab);
 }
-int	ft_verif_doublon(long long *tab, char **str)
-{
-	int	i;
-	int	value;
-	int	j;
-	int	verif;
 
-	verif = 0;
-	i = 0;
-	while (tab[i])
-	{
-		j = 0;
-		value = tab[i];
-		while (tab[j])
-		{
-			if (value == tab[j] && j != i)
-				verif = 1;
-			j++;
-		}
-		i++;
-	}
-	if (verif == 1)
-		return (free(tab), free_function(str), write(1, "Error\n", 6), exit(1),
-			0);
-	return (0);
-}
 long long	*ft_remplissage(long long *tab, char **str)
 {
 	int i;

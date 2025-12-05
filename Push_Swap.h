@@ -20,11 +20,18 @@ int			ft_verif_sign_seul(char **str);
 
 //-----------new_tab------------------//
 int			ft_verif_doublon(long long *tab, char **str);
-long long			*ft_new_tab(int argc, char **argv, long long *tab);
-long long			*ft_remplissage(long long *tab, char **str);
+long long	*ft_new_tab(int argc, char **argv, long long *tab);
+long long	*ft_remplissage(long long *tab, char **str);
 int			ft_len_tab(char **argv, int argc);
 int			ft_strlen(char *str);
 //-----------new_tab------------------//
+
+//----------new_tab_rank-------------//
+int			*ft_create_tab_rank(long long *tab, int *new_tab, char **argv,
+				int argc);
+int			verif_tab_finich(long long *tab, char **argv, int argc);
+
+//----------new_tab_rank-------------//
 
 //-----------FREE--------------------//
 void		free_function(char **str);
