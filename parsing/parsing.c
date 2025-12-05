@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 11:39:20 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 17:37:04 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 19:10:25 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ int	ft_check_arguments(char **argv)
 	{
 		str = ft_split(argv[i], ' ');
 		if (str == NULL)
-			return (free_function(str), 1);
+			return (printf("error split\n"), free_function(str), 1);
 		if (ft_sign_check(str))
-			return (free_function(str), 1);
+			return (printf("error sign\n"), free_function(str), 1);
 		if (ft_check_limits(str))
-			return (free_function(str), 1);
+			return (printf("error limit\n"), free_function(str), 1);
 		free_function(str);
 		i++;
 	}

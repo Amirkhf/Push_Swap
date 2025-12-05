@@ -19,9 +19,9 @@ int			ft_verif_sign_seul(char **str);
 //-----------------PARSING-------------//
 
 //-----------new_tab------------------//
-int			ft_verif_doublon(int *tab, char **str);
-int			*ft_new_tab(int argc, char **argv, int *tab);
-int			*ft_remplissage(int *tab, char **str);
+int			ft_verif_doublon(long long *tab, char **str);
+long long			*ft_new_tab(int argc, char **argv, long long *tab);
+long long			*ft_remplissage(long long *tab, char **str);
 int			ft_len_tab(char **argv, int argc);
 int			ft_strlen(char *str);
 //-----------new_tab------------------//

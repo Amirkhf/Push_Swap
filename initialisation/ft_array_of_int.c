@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:04:42 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 18:52:30 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/05 19:12:29 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int	ft_len_tab(char **argv, int argc)
 		{
 			len++;
 			j++;
-			return (len);
 		}
 		free_function(str);
 		i++;
@@ -39,13 +38,13 @@ int	ft_len_tab(char **argv, int argc)
 	return (len);
 }
 
-int	*ft_new_tab(int argc, char **argv, int *tab)
+long long	*ft_new_tab(int argc, char **argv, long long *tab)
 {
 	int		i;
 	char	**str;
 
 	i = 1;
-	tab = malloc(ft_len_tab(argv, argc) * sizeof(int));
+	tab = malloc(ft_len_tab(argv, argc) * sizeof(long long));
 	if (tab == NULL)
 		return (0);
 	while (argv[i])
@@ -60,7 +59,7 @@ int	*ft_new_tab(int argc, char **argv, int *tab)
 	}
 	return (tab);
 }
-int	ft_verif_doublon(int *tab, char **str)
+int	ft_verif_doublon(long long *tab, char **str)
 {
 	int	i;
 	int	value;
@@ -72,8 +71,7 @@ int	ft_verif_doublon(int *tab, char **str)
 	while (tab[i])
 	{
 		j = 0;
-		j = 0;
-		vavalue = tab[i];
+		value = tab[i];
 		while (tab[j])
 		{
 			if (value == tab[j] && j != i)
@@ -87,7 +85,7 @@ int	ft_verif_doublon(int *tab, char **str)
 			0);
 	return (0);
 }
-int	*ft_remplissage(int *tab, char **str)
+long long	*ft_remplissage(long long *tab, char **str)
 {
 	int i;
 	static int j = 0;
