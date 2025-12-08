@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 11:39:34 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/08 11:16:58 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:05:41 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ int	main(int argc, char **argv)
 	tab = ft_new_tab(argc, argv, tab);
 	if (tab == NULL)
 		return (0);
-	//new_tab = ft_create_tab_rank(tab, new_tab, argv, argc);
+	new_tab = ft_create_tab_rank(tab, new_tab, argv, argc);
 	for (int a = 0; a < ft_len_tab(argv, argc); a++)
 	{
-		printf("%lld ", tab[a]);
+		printf("%lld ", new_tab[a]);
 	}
 	free(tab);
 	// appeler une function qui change les veleut de notre tableau par leur rank
