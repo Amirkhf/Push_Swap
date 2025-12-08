@@ -43,12 +43,17 @@ int					*ft_index_tab(long long *tab, int *new_tab, char **argv,
 
 //-----------FREE--------------------//
 void				free_function(char **str);
+void				ft_function_free(long long *tab, int *new_tab,
+						t_stack **lst);
+
 //-----------FREE--------------------//
 
 //------------------lst--------------//
 t_stack				*ft_lstnew(int value);
 void				ft_lstadd_back(t_stack **lst, t_stack *new);
-t_stack				ft_create_list(int *tab, int len_tab, t_stack **lst);
+t_stack				*ft_create_list(int *tab, int len_tab, t_stack **lst);
+void				ft_afficher(t_stack **lst);
+
 //------------------lst--------------//
 
 #endif
