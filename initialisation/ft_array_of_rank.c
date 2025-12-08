@@ -6,7 +6,7 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 19:49:35 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/08 12:10:31 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/08 12:14:48 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	*ft_create_tab_rank(long long *tab, int *new_tab, char **argv, int argc)
 	new_tab = malloc(ft_len_tab(argv, argc) * sizeof(int));
 	if (new_tab == NULL)
 		exit(1);
-	new_tab = tab_test(tab, new_tab, argv, argc);
+	new_tab = ft_index_tab(tab, new_tab, argv, argc);
 	if (new_tab == NULL)
 		exit(1);
 	return (new_tab);
 }
 
-int	*tab_test(long long *tab, int *new_tab, char **argv, int argc)
+int	*ft_index_tab(long long *tab, int *new_tab, char **argv, int argc)
 {
 	long long	min;
 	int	i;
