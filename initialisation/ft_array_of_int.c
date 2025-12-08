@@ -6,11 +6,37 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/05 13:04:42 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 19:19:01 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/08 11:51:02 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_Swap.h"
+
+long long	*ft_new_tab(int argc, char **argv, long long *tab)
+{
+	int		i;
+	char	**str;
+
+	i = 1;
+	tab = malloc(ft_len_tab(argv, argc) * sizeof(long long));
+	if (tab == NULL)
+		return (0);
+	while (argv[i])
+	{
+		str = ft_split(argv[i], ' ');
+		if (str == NULL)
+			return (NULL);
+		tab = ft_remplissage(tab, str);
+		ft_verif_doublon(tab, str);
+		free_function(str);
+		i++;
+	}
+	if (ft_verif_tab_trier(tab, argv, argc))
+		return (0);
+	return (tab);
+}
+
+
 
 int	ft_len_tab(char **argv, int argc)
 {
@@ -36,28 +62,6 @@ int	ft_len_tab(char **argv, int argc)
 		i++;
 	}
 	return (len);
-}
-
-long long	*ft_new_tab(int argc, char **argv, long long *tab)
-{
-	int		i;
-	char	**str;
-
-	i = 1;
-	tab = malloc(ft_len_tab(argv, argc) * sizeof(long long));
-	if (tab == NULL)
-		return (0);
-	while (argv[i])
-	{
-		str = ft_split(argv[i], ' ');
-		if (str == NULL)
-			return (NULL);
-		tab = ft_remplissage(tab, str);
-		ft_verif_doublon(tab, str);
-		free_function(str);
-		i++;
-	}
-	return (tab);
 }
 
 long long	*ft_remplissage(long long *tab, char **str)

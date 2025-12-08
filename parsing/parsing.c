@@ -6,11 +6,31 @@
 /*   By: amkhelif <amkhelif@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/04 11:39:20 by amkhelif          #+#    #+#             */
-/*   Updated: 2025/12/05 19:19:37 by amkhelif         ###   ########.fr       */
+/*   Updated: 2025/12/08 11:51:11 by amkhelif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../Push_Swap.h"
+
+int	ft_verif_tab_trier(long long *tab, char **argv, int argc)
+{
+	int	len_tab;
+	int	i;
+
+	len_tab = ft_len_tab(argv, argc);
+	i = 0;
+	if (len_tab < 2)
+		return (1);
+	while (i < len_tab - 1)
+	{
+		if (tab[i] > tab[i + 1])
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
+}
 
 int	ft_verif_doublon(long long *tab, char **str)
 {
